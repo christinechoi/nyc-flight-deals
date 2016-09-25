@@ -21,7 +21,8 @@ class NYCFlightDeals::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts @deals[input.to_i - 1]
+        flight_deal = @deals[input.to_i - 1]
+        puts "#{i}. #{flight_deal.description}"
       elsif input == "list"
         list_deals
       else
