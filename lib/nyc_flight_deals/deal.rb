@@ -1,10 +1,14 @@
 class NYCFlightDeals::Deal
   attr_accessor :description, :price, :url
   def self.recent #return instances of flight deals
-    # puts <<-DOC
-    #   1. American - $211: Phoenix - New York (and vice versa). RT including all Taxes
-    #   2. American - $165: New York - Denver (and vice versa). RT including all taxes
-    # DOC
+   
+    #scrape flight deal site and return data
+    self.scrape_deals
+
+  end
+
+  def self.scrape_deals
+
     flight_1 = self.new 
     flight_1.description = "American - $211: Phoenix - New York (and vice versa). RT including all Taxes"
     flight_1.price = "$211"
