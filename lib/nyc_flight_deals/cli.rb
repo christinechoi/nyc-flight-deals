@@ -8,10 +8,6 @@ class NYCFlightDeals::CLI
 
   def list_deals
     puts "Today's Flight Deals:"
-    puts <<-DOC
-      1. American - $211: Phoenix - New York (and vice versa). RT including all Taxes
-      2. American - $165: New York - Denver (and vice versa). RT including all taxes
-    DOC
     @deals = NYCFlightDeals::Deal.recent
   end
 
