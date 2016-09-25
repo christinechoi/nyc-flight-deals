@@ -8,7 +8,10 @@ class NYCFlightDeals::Deal
   end
 
   def self.scrape_deals
-
+    #go to site, find flight
+    #extract properties
+    #instantiate a deal
+    flights = []
     flight_1 = self.new 
     flight_1.description = "American - $211: Phoenix - New York (and vice versa). RT including all Taxes"
     flight_1.price = "$211"
@@ -19,7 +22,7 @@ class NYCFlightDeals::Deal
     flight_2.price = "$165"
     flight_2.url = "http://www.theflightdeal.com/2016/09/24/american-165-new-york-denver-and-vice-versa-roundtrip-including-all-taxes/"
     
-    [flight_1, flight_2]
+    flights 
   end
 
 end
