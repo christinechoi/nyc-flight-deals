@@ -8,9 +8,9 @@ class NYCFlightDeals::Deal
   end
 
   def self.scrape_deals
-    #go to site, find flight
-    #extract properties
-    #instantiate a deal
+    #go to site, find 3 most recently posted flights
+    #extract properties of 3 flights
+    #instantiate 3 flights
     flights = []
 
     flights << self.scrape_site
@@ -19,11 +19,26 @@ class NYCFlightDeals::Deal
     flights 
   end
 
-  def self.scrape_site
+  def self.scrape_first_flight #first flight
     doc = Nokogiri::HTML(open("http://www.theflightdeal.com/category/flight-deals/nyc/"))
+    description = doc.css(".entry-content h1 a")[0].text
+    url = doc.css("div .entry-content h1 a").first.attribute("href").value
     binding.pry
   end
 
+  def self.scrape_second_flight
+    doc = Nokogiri::HTML(open("http://www.theflightdeal.com/category/flight-deals/nyc/"))
+    description = doc.css(".entry-content h1 a")[1].text
+    url = doc.css("div .entry-content h1 a")[1].attribute("href").value
+    binding.pry
+  end
+
+  def self.scrape_third_flight
+    doc = Nokogiri::HTML(open("http://www.theflightdeal.com/category/flight-deals/nyc/"))
+    description = doc.css(".entry-content h1 a")[2].text
+    url = doc.css("div .entry-content h1 a")[2].attribute("href").value
+    binding.pry
+  end
 
 
 end
