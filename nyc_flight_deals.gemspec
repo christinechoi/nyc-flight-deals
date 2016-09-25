@@ -5,12 +5,12 @@ require 'nyc_flight_deals/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "nyc_flight_deals"
-  spec.version       = NycFlightDeals::VERSION
+  spec.version       = NYCFlightDeals::VERSION
   spec.authors       = ["christinechoi"]
   spec.email         = ["smi77y@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{CLI app to view NYC flight deals.}
+  spec.description   = %q{}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 

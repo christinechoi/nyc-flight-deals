@@ -1,3 +1,3 @@
-module NycFlightDeals
+module NYCFlightDeals
   VERSION = "0.1.0"
 end
