@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
-#require 'bundler/setup'
-require './lib/nyc_flight_deals'
+
+require "bundler/setup"
+require "nyc_flight_deals"
 NYCFlightDeals::CLI.new.call

@@ -9,6 +9,9 @@ class NYCFlightDeals::CLI
   def list_deals
     puts "Today's Flight Deals:"
     @deals = NYCFlightDeals::Deal.recent
+    @deals.each.with_index(1) do |deal, i|
+      puts "#{i}. #{deal.description}"
+    end
   end
 
   def menu
@@ -17,13 +20,10 @@ class NYCFlightDeals::CLI
       puts "Enter the number of the flight you want more info on. Type 'list' to see deals again, or type 'exit' to exit."
       input = gets.strip.downcase
 
-      case input 
-      when "list"
+      if input.to_i > 0
+        puts @deals[input.to_i - 1]
+      elsif input == "list"
         list_deals
-      when "1"
-        puts "More info on flight 1..."
-      when "2"
-        puts "More info on flight 2..."
       else
         puts "Sorry, invalid response."
       end
