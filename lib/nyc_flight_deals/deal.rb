@@ -1,5 +1,5 @@
 class NYCFlightDeals::Deal
-  attr_accessor :description, :price, :url
+  attr_accessor :description, :price, :url, :inner, :dates, :search
   def self.recent #return instances of flight deals
    
     #scrape flight deal site and return data
@@ -13,16 +13,24 @@ class NYCFlightDeals::Deal
     #instantiate 3 flights
     flights = []
 
-    flights << self.scrape_site
-
+    flights << self.scrape_first_flight
+    flights << self.scrape_second_flight
+    flights << self.scrape_third_flight
 
     flights 
   end
 
-  def self.scrape_first_flight #first flight
+  def self.scrape_first_flight
     doc = Nokogiri::HTML(open("http://www.theflightdeal.com/category/flight-deals/nyc/"))
-    description = doc.css(".entry-content h1 a")[0].text
-    url = doc.css("div .entry-content h1 a").first.attribute("href").value
+    
+    flight_1 = self.new 
+
+    flight_1.description = doc.css(".entry-content h1 a")[0].text
+    flight_1.url = doc.css("div .entry-content h1 a").first.attribute("href").value
+    page = Nokogiri::HTML(open("#{flight_1.url}"))
+    flight_1.dates = page.search("div .entry-content ul")[2].children.text
+    flight_1.search = page.search("div .entry-content ul")[4].children.text
+
     binding.pry
   end
 
