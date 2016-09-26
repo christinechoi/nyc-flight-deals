@@ -7,11 +7,13 @@ class NYCFlightDeals::CLI
   end
 
   def list_deals
-    puts "Today's Flight Deals:"
+    puts "===== Today's Flight Deals ====="
+    puts ""
     @deals = NYCFlightDeals::Deal.recent
     @deals.each.with_index(1) do |deal, i|
       puts "#{i}. #{deal.description}"
     end
+    puts ""
   end
 
   def menu
@@ -29,6 +31,13 @@ class NYCFlightDeals::CLI
         puts ""
         puts "===== How to Search for Availability ====="
         puts "#{flight_deal.search}"
+        puts "===== Routing ====="
+        puts "#{flight_deal.route}"
+        puts ""
+        puts "===== Stopovers ====="
+        puts "#{flight_deal.stopover}"
+        puts ""
+
 
       elsif input == "list"
         list_deals
