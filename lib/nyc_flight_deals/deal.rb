@@ -14,8 +14,8 @@ class NYCFlightDeals::Deal
     flights = []
 
     flights << self.scrape_first_flight
-    flights << self.scrape_second_flight
-    flights << self.scrape_third_flight
+    #flights << self.scrape_second_flight
+    #flights << self.scrape_third_flight
 
     flights 
   end
@@ -30,22 +30,22 @@ class NYCFlightDeals::Deal
     page = Nokogiri::HTML(open("#{flight_1.url}"))
     flight_1.dates = page.search("div .entry-content ul")[2].children.text
     flight_1.search = page.search("div .entry-content ul")[4].children.text
-
-    binding.pry
+    flight_1
+    #binding.pry
   end
 
   def self.scrape_second_flight
     doc = Nokogiri::HTML(open("http://www.theflightdeal.com/category/flight-deals/nyc/"))
     description = doc.css(".entry-content h1 a")[1].text
     url = doc.css("div .entry-content h1 a")[1].attribute("href").value
-    binding.pry
+    #binding.pry
   end
 
   def self.scrape_third_flight
     doc = Nokogiri::HTML(open("http://www.theflightdeal.com/category/flight-deals/nyc/"))
     description = doc.css(".entry-content h1 a")[2].text
     url = doc.css("div .entry-content h1 a")[2].attribute("href").value
-    binding.pry
+    #binding.pry
   end
 
 
