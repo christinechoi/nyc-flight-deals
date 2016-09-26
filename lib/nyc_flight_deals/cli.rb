@@ -24,8 +24,7 @@ class NYCFlightDeals::CLI
 
       if input.to_i > 0
         flight_deal = @deals[input.to_i - 1]
-        #puts "#{flight_deal.description}" #this reprints
-        #flight info from list_deals
+        
         puts "===== Fare Availability ====="
         puts "#{flight_deal.dates}"
         puts ""
@@ -37,11 +36,9 @@ class NYCFlightDeals::CLI
         puts "===== Stopovers ====="
         puts "#{flight_deal.stopover}"
         puts ""
-
-
       elsif input == "list"
         list_deals
-      else
+      elsif input != "exit"
         puts "Sorry, invalid response."
       end
     end

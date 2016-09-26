@@ -23,7 +23,6 @@ class NYCFlightDeals::Deal
     page = Nokogiri::HTML(open("#{flight_1.url}"))
     flight_1.dates = page.search("div .entry-content ul")[2].children.text
     flight_1.search = page.search("div .entry-content ul li")[5].children.text
-    
     flight_1.route = page.search("div .entry-content ul")[9].children.text
     flight_1.stopover = page.search("div .entry-content ul li")[20].children.text
 
@@ -41,7 +40,6 @@ class NYCFlightDeals::Deal
     flight_2.search = page.search("div .entry-content ul li")[5].children.text
     flight_2.route = page.search("div .entry-content ul")[9].children.text
     flight_2.stopover = page.search("div .entry-content ul li")[20].children.text
-
 
     flight_2
   end
