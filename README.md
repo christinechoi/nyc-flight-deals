@@ -6,23 +6,13 @@ Welcome to your new gem! In this directory, you'll find the files you need to be
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'nyc_flight_deals'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+To install the gem, type the following into your command line:
 
     $ gem install nyc_flight_deals
 
 ## Usage
 
-After installing, type the following to run the app:
+After installing, type the following into your command line to run the app:
 
     $ nyc-flight-deals
 
