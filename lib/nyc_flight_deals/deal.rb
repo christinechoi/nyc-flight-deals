@@ -21,12 +21,13 @@ class NYCFlightDeals::Deal
     flight_1.description = doc.css(".entry-content h1 a")[0].text
     flight_1.url = doc.css("div .entry-content h1 a").first.attribute("href").value
     page = Nokogiri::HTML(open("#{flight_1.url}"))
-    flight_1.dates = page.search("div .entry-content ul")[2].children.text
-    flight_1.search = page.search("div .entry-content ul li")[5].children.text
-    flight_1.route = page.search("div .entry-content ul")[9].children.text
-    flight_1.stopover = page.search("div .entry-content ul li")[20].children.text
-
+    
+    flight_1.dates = page.search("div .entry-content ul")[2].text
+    flight_1.search = page.search("div .entry-content ul")[4].text
+    
+    #binding.pry
     flight_1
+    
   end
 
   def self.scrape_second_flight
@@ -34,13 +35,13 @@ class NYCFlightDeals::Deal
     
     flight_2 = self.new 
     flight_2.description = doc.css(".entry-content h1 a")[1].text
-    flight_2.url = doc.css("div .entry-content h1 a").first.attribute("href").value
+    flight_2.url = doc.css("div .entry-content h1 a")[1].attribute("href").value
     page = Nokogiri::HTML(open("#{flight_2.url}"))
-    flight_2.dates = page.search("div .entry-content ul")[2].children.text
-    flight_2.search = page.search("div .entry-content ul li")[5].children.text
-    flight_2.route = page.search("div .entry-content ul")[9].children.text
-    flight_2.stopover = page.search("div .entry-content ul li")[20].children.text
-
+    flight_2.dates = page.search("div .entry-content ul")[2].text
+    flight_2.search = page.search("div .entry-content ul")[4].text
+    # flight_2.route = page.search("div .entry-content ul")[9].children.text
+    # flight_2.stopover = page.search("div .entry-content ul li")[20].children.text
+    binding.pry
     flight_2
   end
 
@@ -49,12 +50,12 @@ class NYCFlightDeals::Deal
     
     flight_3 = self.new 
     flight_3.description = doc.css(".entry-content h1 a")[2].text
-    flight_3.url = doc.css("div .entry-content h1 a").first.attribute("href").value
+    flight_3.url = doc.css("div .entry-content h1 a")[2].attribute("href").value
     page = Nokogiri::HTML(open("#{flight_3.url}"))
     flight_3.dates = page.search("div .entry-content ul")[2].children.text
     flight_3.search = page.search("div .entry-content ul li")[5].children.text
-    flight_3.route = page.search("div .entry-content ul")[9].children.text
-    flight_3.stopover = page.search("div .entry-content ul li")[20].children.text
+    # flight_3.route = page.search("div .entry-content ul")[9].children.text
+    # flight_3.stopover = page.search("div .entry-content ul li")[20].children.text
 
     flight_3
   end
