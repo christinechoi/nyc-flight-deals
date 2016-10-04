@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{NYC flight deals}
   spec.description   = %q{CLI app to view flight deals to/from NYC}
-  spec.homepage      = "https://rubygems.org/nyc_flight_deals"
+  spec.homepage      = "https://rubygems.org/gems/nyc_flight_deals"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
