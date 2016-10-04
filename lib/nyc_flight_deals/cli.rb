@@ -30,13 +30,6 @@ class NYCFlightDeals::CLI
         puts ""
         puts "===== How to Search for Availability ====="
         puts "#{flight_deal.search}"
-        puts "test below"
-        puts "#{flight_deal.stopover}"
-        # puts "===== Routing ====="
-        # puts "#{flight_deal.route}"
-        # puts ""
-        # puts "===== Stopovers ====="
-        # puts "#{flight_deal.stopover}"
         puts ""
       elsif input == "list"
         list_deals
