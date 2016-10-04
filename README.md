@@ -14,7 +14,7 @@ To install the gem, type the following into your command line:
 
 After installing, type the following into your command line to run the app:
 
-    $ nyc-flight-deals
+    $ nyc_flight_deals
 
 ## Development
 

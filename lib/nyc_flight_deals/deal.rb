@@ -25,7 +25,6 @@ class NYCFlightDeals::Deal
     flight_1.dates = page.search("h2")[1].next_element.text
     flight_1.search = page.search("h2")[2].next_element.children[1].text
 
-    
     flight_1
     
   end
