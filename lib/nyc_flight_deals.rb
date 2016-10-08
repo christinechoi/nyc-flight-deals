@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'pry'
 require 'open-uri'
 
 require_relative './nyc_flight_deals/version'
